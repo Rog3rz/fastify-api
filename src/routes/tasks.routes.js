@@ -7,7 +7,6 @@ const routes = [
     handler: async (request, reply) => {
       const tasks = await Task.find();
       return tasks;
-      // reply.send("tasks");
     },
   },
   {
