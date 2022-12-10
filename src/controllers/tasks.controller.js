@@ -20,7 +20,7 @@ const modifyTask = async (request, reply) => {
 
 const deleteTask = async (request, reply) => {
   await Task.findByIdAndDelete(request.params.id);
-  reply.code(204).send();
+  reply.code(204).send("Deleted");
 };
 
 module.exports = {

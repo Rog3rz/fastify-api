@@ -14,7 +14,7 @@ tasksRoutes.forEach((route) =>{
 });
 
 const start = async () => {
-  await fastify.listen({ port: 3000 });
+  await fastify.listen({ port: 4000 });
   fastify.log.info(`Server running on ${fastify.server.address().port}`);
 };
 
