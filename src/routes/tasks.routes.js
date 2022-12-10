@@ -1,34 +1,25 @@
-const Task = require("..//models/task.model");
+const taskController = require("../controllers/tasks.controller");
 
 const routes = [
   {
     url: "/tasks",
     method: "GET",
-    handler: async (request, reply) => {
-      const tasks = await Task.find();
-      return tasks;
-    },
+    handler: taskController.getTasks,
   },
   {
     url: "/add-task",
     method: "POST",
-    handler: (request, reply) => {
-      reply.send("add task");
-    },
+    handler: taskController.addTask,
   },
   {
     url: "/modify-task/:id",
     method: "PUT",
-    handler: (request, reply) => {
-      reply.send("modify task");
-    },
+    handler: taskController.modifyTask,
   },
   {
     url: "/delete-task/:id",
     method: "DELETE",
-    handler: (request, reply) => {
-      reply.send("delete task");
-    },
+    handler: taskController.deleteTask,
   },
 ];
 

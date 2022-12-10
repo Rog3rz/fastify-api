@@ -2,10 +2,11 @@ const fastify = require("fastify")({
   logger: true,
 });
 const tasksRoutes = require("./routes/tasks.routes");
-require('./utils/mongoose');
+const connectToMongoDB = require('./utils/mongoose');
+connectToMongoDB();
 
 fastify.get("/", (request, reply) => {
-  reply.send({ hello: "world" });
+  reply.redirect("/tasks");
 });
 
 tasksRoutes.forEach((route) =>{
